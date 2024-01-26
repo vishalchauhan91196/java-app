@@ -26,17 +26,17 @@ pipeline {
             steps {
                 sh 'mvn clean install'
             }
-        }
+        }   
 
-        // stage("Static Code Analysis"){
-        //     steps {
-        //         script {
-        //             withSonarQubeEnv(credentialsId: 'sonarqube') {
-        //                 sh 'mvn clean package sonar:sonar'
-        //             }
-        //         }
-        //     }
-        // }
+        stage("Static Code Analysis"){
+            steps {
+                script {
+                    withSonarQubeEnv(credentialsId: 'sonarqube') {
+                        sh 'mvn clean package sonar:sonar'
+                    }
+                }
+            }
+        }
 
         // stage("Quality Gate Analysis"){
         //     steps {
