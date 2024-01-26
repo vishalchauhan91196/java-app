@@ -55,5 +55,17 @@ pipeline {
                 '''
             }
         }
+
+        stage("Push docker image to Docker Hub"){
+            steps {
+                withCredentials([string(credentialsId: 'dockerhub_password', variable: 'dockerhub_creds')]) {
+                    sh'''
+                        docker login -u vishalchauhan9 -p ${dockerhub_creds}
+                        docker image push vishalchauhan9/javaappcicd:v1.$BUILD_ID
+                        docker image push vishalchauhan9/javaappcicd:latest              
+                    '''
+                }
+            }
+        }
     }
 }
