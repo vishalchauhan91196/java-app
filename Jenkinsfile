@@ -45,5 +45,15 @@ pipeline {
                 }
             }
         }
+
+        stage("Docker image build"){
+            steps {
+                sh'''
+                    docker build -t javaappcicd:v1.$BUILD_ID .
+                    docker image tag javaappcicd:v1.$BUILD_ID vishalchauhan9/javaappcicd:v1.$BUILD_ID 
+                    docker image tag javaappcicd:v1.$BUILD_ID vishalchauhan9/javaappcicd:latest
+                '''
+            }
+        }
     }
 }
