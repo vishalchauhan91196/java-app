@@ -38,12 +38,12 @@ pipeline {
             }
         }
 
-        // stage("Quality Gate Analysis"){
-        //     steps {
-        //         script {
-        //            waitForQualityGate abortPipeline: false, credentialsId: 'sonarqube_token' 
-        //         }
-        //     }
-        // }
+        stage("Quality Gate Analysis"){
+            steps {
+                script {
+                   waitForQualityGate abortPipeline: false, credentialsId: 'sonarqube_token' 
+                }
+            }
+        }
     }
 }
