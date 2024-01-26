@@ -10,17 +10,17 @@ pipeline {
             }
         }
 
-        // stage("Unit Testing"){
-        //     steps {
-        //         sh 'mvn test'
-        //     }
-        // }
+        stage("Unit Testing"){
+            steps {
+                sh 'mvn test'
+            }
+        }
 
-        // stage("Integration Testing"){
-        //     steps {
-        //         sh 'mvn verify -DskipUnitTests'
-        //     }
-        // }
+        stage("Integration Testing"){
+            steps {
+                sh 'mvn verify -DskipUnitTests'
+            }
+        }
 
         // stage("Build"){
         //     steps {
