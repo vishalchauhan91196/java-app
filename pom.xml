@@ -41,7 +41,7 @@
                         <goal>repackage</goal>
                     </goals>
                     <configuration>
-                        <finalName>UPES</finalName>
+                        <finalName>SRM</finalName>
                     </configuration>
                 </execution>
             </executions>
