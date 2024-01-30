@@ -7,5 +7,10 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/vishalchauhan91196/java-app.git'
             }
         }
+        stage("UNIT TEST") {
+            steps{
+                sh 'mvn test'
+            }
+        }
     }
 }
